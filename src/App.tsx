@@ -9,7 +9,7 @@ import Contact from './components/Contact'
 function useDarkMode() {
   const [isDark, setIsDark] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false
-    const saved = localStorage.getItem('brut-theme')
+    const saved = localStorage.getItem('sugar-theme')
     if (saved) return saved === 'dark'
     return window.matchMedia('(prefers-color-scheme: dark)').matches
   })
@@ -18,7 +18,7 @@ function useDarkMode() {
     const root = document.documentElement
     if (isDark) root.classList.add('dark')
     else root.classList.remove('dark')
-    localStorage.setItem('brut-theme', isDark ? 'dark' : 'light')
+    localStorage.setItem('sugar-theme', isDark ? 'dark' : 'light')
   }, [isDark])
 
   return { isDark, toggle: () => setIsDark((v) => !v) }
