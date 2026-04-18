@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Public Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-paper text-ink bg-cardboard;
+    background-attachment: fixed;
+  }
+  html.dark body {
+    @apply bg-charcoal text-paper;
+    background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  h1, h2, h3 {
+    font-family: 'Archivo Black', 'Public Sans', sans-serif;
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background-color: #FDC800;
+    color: #000;
+  }
+}
+
+@layer components {
+  .brut-card {
+    @apply bg-white text-ink border-3 border-ink shadow-brut rounded-none transition-transform transition-shadow duration-150 ease-out;
+  }
+  .dark .brut-card {
+    @apply bg-charcoalSoft text-paper border-paper shadow-brut-dark;
+  }
+  .brut-card-hover {
+    @apply hover:-translate-x-1 hover:-translate-y-1 hover:shadow-brut-lg;
+  }
+  .dark .brut-card-hover {
+    @apply hover:shadow-brut-dark-lg;
+  }
+  .brut-btn {
+    @apply inline-flex items-center gap-2 bg-brutYellow text-ink font-display uppercase tracking-wide px-5 py-3 border-3 border-ink shadow-brut-sm transition-all duration-150 ease-out active:translate-x-1 active:translate-y-1 active:shadow-none hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brut;
+  }
+  .dark .brut-btn {
+    @apply border-paper shadow-brut-dark-sm hover:shadow-brut-dark;
+  }
+  .brut-chip {
+    @apply inline-flex items-center gap-2 bg-white border-3 border-ink px-3 py-1 text-sm font-mono shadow-brut-sm;
+  }
+  .dark .brut-chip {
+    @apply bg-charcoalSoft border-paper shadow-brut-dark-sm;
+  }
+  .brut-sticker {
+    @apply inline-block border-3 border-ink bg-brutYellow px-3 py-1 font-display uppercase;
+  }
+  .dark .brut-sticker {
+    @apply border-paper;
+  }
+  .brut-section {
+    @apply relative border-y-5 border-ink;
+  }
+  .dark .brut-section {
+    @apply border-paper;
+  }
+}
+
+/* Grid paper background tile for hero */
+.grid-paper {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.dark .grid-paper {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+}
+
+/* Halftone dots for emphasis */
+.halftone {
+  background-image: radial-gradient(#000 1.2px, transparent 1.2px);
+  background-size: 10px 10px;
+}
+.dark .halftone {
+  background-image: radial-gradient(#FDC800 1.2px, transparent 1.2px);
+}
+
+/* Scrollbar (subtle brutal) */
+.brut-scroll::-webkit-scrollbar { height: 14px; }
+.brut-scroll::-webkit-scrollbar-track {
+  background: #fff;
+  border: 3px solid #000;
+}
+.brut-scroll::-webkit-scrollbar-thumb {
+  background: #FDC800;
+  border: 3px solid #000;
+}
+.dark .brut-scroll::-webkit-scrollbar-track {
+  background: #1c1c1e;
+  border: 3px solid #F0F0F0;
+}
+.dark .brut-scroll::-webkit-scrollbar-thumb {
+  background: #FF3EA5;
+  border: 3px solid #F0F0F0;
+}

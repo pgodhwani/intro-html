@@ -1,14 +1,53 @@
-## Your GitHub Learning Lab Repository for Intro to HTML
+# Neobrutalist Portfolio — Sandhya Siddarth
 
-Welcome to your repository for your GitHub Learning Lab course. This repository will be used during the different activities that I will be guiding you through.
+A loud, high-contrast, single-page portfolio built in the neobrutalist style:
+hard black borders, offset shadows (no blur), saturated accent colors, chunky
+display type paired with monospace body text.
 
-Oh! I haven't introduced myself...
+## Stack
 
-I'm the GitHub Learning Lab bot and I'm here to help guide you in your journey to learn and master the various topics covered in this course. I will be using Issue and Pull Request comments to communicate with you. In fact, I already added an issue for you to check out.
+- React 19 + TypeScript + Vite
+- Tailwind CSS 3 (custom tokens for shadows, borders, fonts, palette)
+- Lucide React for stroke-based icons
+- Google Fonts: Archivo Black, Public Sans, JetBrains Mono, Caveat
 
-![issue tab](https://lab.github.com/public/images/issue_tab.png)
+## Sections
 
-I'll meet you over there, can't wait to get started!
+1. **Hero** — sticker headline, live availability chip, avatar card, tech-stack
+   marquee, grayscale "Worked With" logo grid.
+2. **Wall of Case Studies** — asymmetric CSS grid (1/2-col mix) with cards that
+   pop on hover (translate `-4px -4px`, shadow depth increase).
+3. **Artwork & Playground** — horizontal-scroll art gallery with handwritten
+   captions + a "Gaming I Created" arcade-button grid.
+4. **VIP: The Lead Consultant** — dedicated card for Miso the cat, complete
+   with a professional bio and a "cat-stack" skill chart.
 
-This repository is licensed under [MIT](LICENSE) (c) 2019 GitHub, Inc.
-Photo by [Kelli Tungay](https://unsplash.com/photos/Sj0nhVIb4eY) on [Unsplash](https://unsplash.com/)
+## Dark Mode
+
+Toggling via the nav button swaps the background to charcoal and switches
+shadows to yellow / pink offsets so the thick black borders remain visible
+against dark. Preference is persisted in `localStorage`.
+
+## Scripts
+
+```bash
+npm install
+npm run dev      # local dev
+npm run build    # type-check + production bundle
+npm run lint     # eslint
+npm run preview  # preview prod build
+```
+
+## Design tokens
+
+See `tailwind.config.js` for the full token set:
+
+- `shadow-brut` / `shadow-brut-lg` — 8px and 12px hard black offsets
+- `shadow-brut-dark*` — light-colored offsets for dark mode
+- `border-3` / `border-5` — 3px/5px solid borders
+- `bg-brutYellow`, `bg-brutPink`, `bg-brutBlue`, etc.
+- `animate-marquee`, `animate-press-down`, `animate-blink`
+
+Photo by [Kelli Tungay](https://unsplash.com/photos/Sj0nhVIb4eY) on
+[Unsplash](https://unsplash.com/). Licensed under
+[MIT](LICENSE) (c) 2019 GitHub, Inc.
