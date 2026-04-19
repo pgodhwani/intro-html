@@ -1,135 +1,100 @@
-import { Award, Briefcase, Cat, PhoneCall } from 'lucide-react'
-import RotatingBadge from './RotatingBadge'
+import { PixelStar } from './Pixel'
 
-const stack = [
-  { name: 'SLEEP.js', level: 99, color: 'bg-sunshine' },
-  { name: 'MEOW++', level: 94, color: 'bg-cottonPink' },
-  { name: 'ZOOMIES 3D', level: 88, color: 'bg-skyCandy' },
-  { name: 'KEYBOARD/WALK', level: 100, color: 'bg-mint' },
-  { name: 'LAP-AAS', level: 72, color: 'bg-lilac' },
+const skills = [
+  { name: 'Napping.js', level: 99 },
+  { name: 'Keyboard paws', level: 94 },
+  { name: 'Design critique (loud)', level: 88 },
 ]
 
 export default function VipCat() {
   return (
-    <section id="vip" className="mx-3 sm:mx-6 mt-20 sm:mt-28">
-      <div className="mb-10">
-        <span className="chip !bg-sunshine">section · 04 · v.i.p.</span>
-        <h2 className="mt-4 font-serifDisplay text-5xl sm:text-7xl leading-[0.9]">
-          <span className="text-rose dark:text-star">meet the</span>{' '}
-          <span className="outlined-thick" style={{ ['--stroke' as string]: 'var(--ink)' }}>lead consultant</span>
-        </h2>
-      </div>
-
-      <div className="grid gap-8 lg:grid-cols-12">
-        {/* Profile ticket */}
-        <article className="ticket p-6 sm:p-8 lg:col-span-7 relative">
-          <div className="absolute -top-4 -right-4 z-10">
-            <RotatingBadge
-              text="employee of the century"
-              size={112}
-              fill="#FF3E8A"
-              textColor="#FFF6EA"
-              inner="★"
-            />
-          </div>
-
-          <div className="ticket-inner p-5 sm:p-6">
-            <div className="grid gap-6 sm:grid-cols-[auto,1fr] items-start">
-              <div className="relative">
-                <div className="h-40 w-40 rounded-2xl border-1.5 border-plum dark:border-star bg-sunshine grid place-items-center text-7xl shadow-[3px_3px_0_0_#8C1E5C] dark:shadow-[3px_3px_0_0_#FFE6F5]" aria-hidden>
-                  🐈
-                </div>
-                <div className="absolute -bottom-3 -left-3 rounded-full border-1.5 border-plum dark:border-star bg-cream dark:bg-nightSoft p-2 -rotate-6 shadow-[2px_2px_0_0_#8C1E5C] dark:shadow-[2px_2px_0_0_#FFE6F5]">
-                  <Cat size={16} strokeWidth={2.5} />
-                </div>
-              </div>
-
-              <div>
-                <p className="font-hand text-2xl -rotate-2 text-rose dark:text-star mb-1">
-                  please welcome,
-                </p>
-                <h3 className="font-serifDisplay text-4xl sm:text-5xl leading-[0.95] text-inkRose dark:text-star">
-                  MISO,
-                </h3>
-                <h3
-                  className="font-serifDisplay text-4xl sm:text-5xl leading-[0.95] outlined-thick"
-                  style={{ ['--stroke' as string]: '#D6286F' }}
-                >
-                  PRINCIPAL MISCHIEF OFFICER
-                </h3>
-                <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-inkRose/70 dark:text-star/70">
-                  she / her · est. 2023 · 4.2 kg of opinion
-                </p>
-                <p className="mt-4 font-sans text-sm sm:text-base leading-relaxed text-inkRose/85 dark:text-star/85">
-                  Miso joined the studio in Q4 2023 as an unpaid intern and
-                  was rapidly promoted to <b>Lead Consultant</b> after
-                  single-handedly redesigning the Q1 roadmap (she walked
-                  across the keyboard). Specializes in loaf-based project
-                  management and critical feedback delivered at 5:43 AM.
-                </p>
-
-                <ul className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3">
-                  <li className="chip"><Award size={11} strokeWidth={2.5} /> 12 naps/day</li>
-                  <li className="chip"><Briefcase size={11} strokeWidth={2.5} /> 0 deadlines met</li>
-                  <li className="chip"><PhoneCall size={11} strokeWidth={2.5} /> 100% on-call</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        {/* Cat-stack soft card */}
-        <article className="soft-card p-6 sm:p-8 lg:col-span-5">
-          <div className="flex items-center justify-between">
-            <h3 className="font-serifDisplay text-3xl sm:text-4xl text-inkRose dark:text-star">
-              the <span className="outlined" style={{ ['--stroke' as string]: '#D6286F' }}>cat-stack</span>
-            </h3>
-            <span className="chip !bg-bubblegum !text-cream">v 9.9.9</span>
-          </div>
-          <p className="font-hand text-xl -rotate-1 mt-1 text-rose dark:text-star">
-            battle-tested. mostly on laps.
+    <section
+      id="vip"
+      className="px-6 py-20 md:py-28"
+      aria-labelledby="vip-title"
+    >
+      <div className="mx-auto max-w-4xl">
+        <div className="mb-10 text-center">
+          <span className="chip">The VIP</span>
+          <h2
+            id="vip-title"
+            className="mt-3 text-4xl md:text-6xl font-extrabold tracking-tight"
+          >
+            Meet{' '}
+            <span className="font-sugar font-normal text-[color:var(--accent)]">
+              Miso
+            </span>
+          </h2>
+          <p className="mt-2 text-[color:var(--muted)]">
+            Lead consultant. Pays rent in loaf.
           </p>
+        </div>
 
-          <ul className="mt-6 space-y-4">
-            {stack.map((s) => (
-              <li key={s.name}>
-                <div className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.12em]">
-                  <span className="font-serifDisplay normal-case text-base tracking-normal text-inkRose dark:text-star">
-                    {s.name}
-                  </span>
-                  <span className="text-inkRose/70 dark:text-star/70">{s.level}%</span>
-                </div>
-                <div className="mt-2 h-4 rounded-full border-1.5 border-plum dark:border-star bg-cream/50 dark:bg-night/50 overflow-hidden">
-                  <div
-                    className={`${s.color} h-full border-r-1.5 border-plum dark:border-star`}
-                    style={{ width: `${s.level}%` }}
-                    role="progressbar"
-                    aria-label={s.name}
-                    aria-valuenow={s.level}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+        <article className="ticket ticket-hover mx-auto grid gap-6 px-8 py-10 md:grid-cols-[1fr_1.4fr] md:px-12 md:py-12">
+          <div className="flex flex-col items-center justify-center gap-3">
+            <PixelMiso />
+            <span className="tag-green">Principal Mischief Officer</span>
+          </div>
 
-          <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-            <div className="rounded-2xl border-1.5 border-plum dark:border-star bg-sunshine p-3 text-inkRose">
-              <div className="font-serifDisplay text-2xl">18 HR</div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.16em]">sleep / day</div>
+          <div className="flex flex-col justify-center gap-5">
+            <p className="text-sm md:text-base text-[color:var(--ink)]/85">
+              Miso is the quiet part of the team. He reviews mockups with a
+              slow blink, naps exactly on the trackpad during standups, and has
+              an uncanny sense for which Figma frame is the actual final.
+            </p>
+
+            <div className="flex flex-col gap-3">
+              {skills.map((s) => (
+                <div key={s.name}>
+                  <div className="mb-1 flex items-center justify-between text-xs font-semibold">
+                    <span>{s.name}</span>
+                    <span className="pixel-label text-[color:var(--muted)]">
+                      {s.level}%
+                    </span>
+                  </div>
+                  <div className="h-2 w-full rounded-full border-1.5 border-[color:var(--line)] bg-[color:var(--page-bg)]">
+                    <div
+                      className="h-full rounded-full bg-[color:var(--accent)]"
+                      style={{ width: `${s.level}%` }}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="rounded-2xl border-1.5 border-plum dark:border-star bg-bubblegum text-cream p-3">
-              <div className="font-serifDisplay text-2xl">42</div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.16em]">keystrokes</div>
-            </div>
-            <div className="rounded-2xl border-1.5 border-plum dark:border-star bg-skyCandy p-3 text-inkRose">
-              <div className="font-serifDisplay text-2xl">∞</div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.16em]">zoomies/hr</div>
+
+            <div className="flex items-center gap-2 pt-1 text-[color:var(--muted)]">
+              <PixelStar size={10} color="var(--accent)" />
+              <span className="pixel-label">ON CALL FOR CAT TAX ONLY</span>
             </div>
           </div>
         </article>
       </div>
     </section>
+  )
+}
+
+function PixelMiso() {
+  const B = 'var(--ink)'
+  const O = '#E8A86A'
+  const W = '#FFFFFF'
+  const P = 'var(--accent)'
+  const pixels: Array<[number, number, string]> = [
+    [2, 1, B], [3, 1, B], [6, 1, B], [7, 1, B],
+    [2, 2, B], [3, 2, O], [4, 2, B], [5, 2, B], [6, 2, O], [7, 2, B],
+    [1, 3, B], [2, 3, O], [3, 3, W], [4, 3, B], [5, 3, B], [6, 3, W], [7, 3, O], [8, 3, B],
+    [1, 4, B], [2, 4, O], [3, 4, O], [4, 4, O], [5, 4, O], [6, 4, O], [7, 4, O], [8, 4, B],
+    [1, 5, B], [2, 5, O], [3, 5, O], [4, 5, P], [5, 5, P], [6, 5, O], [7, 5, O], [8, 5, B],
+    [2, 6, B], [3, 6, O], [4, 6, O], [5, 6, O], [6, 6, O], [7, 6, B],
+    [3, 7, B], [4, 7, B], [5, 7, B], [6, 7, B],
+  ]
+  return (
+    <div className="pixel-card p-3" style={{ borderRadius: 6 }} aria-hidden="true">
+      <svg width="160" height="140" viewBox="0 0 10 9" shapeRendering="crispEdges">
+        <rect x="0" y="0" width="10" height="9" fill="#F4F1FF" />
+        {pixels.map(([x, y, c], i) => (
+          <rect key={i} x={x} y={y} width="1" height="1" fill={c} />
+        ))}
+      </svg>
+    </div>
   )
 }

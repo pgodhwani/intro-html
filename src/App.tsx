@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import About from './components/About'
 import CaseStudies from './components/CaseStudies'
 import Playground from './components/Playground'
 import VipCat from './components/VipCat'
@@ -32,6 +33,7 @@ export default function App() {
       <Nav isDark={isDark} onToggleDark={toggle} />
       <main>
         <Hero />
+        <About />
         <CaseStudies />
         <Playground />
         <VipCat />
